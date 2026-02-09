@@ -1,26 +1,23 @@
-cat > requirements.txt << 'EOF'
 # UI
-streamlit
+streamlit==1.54.0
 
 # Document Processing
-langchain-community
+langchain-community==0.4.1
 langchain-core
-langchain-text-splitters
-pdfplumber
+langchain-text-splitters==1.1.0
+pdfplumber==0.11.9
 
 # Vector Store
-faiss-cpu
-numpy
+faiss-cpu==1.13.2
+numpy==2.4.2
 
 # Embeddings
-sentence-transformers
-torch
+sentence-transformers==5.2.2
+torch==2.10.0
 
 # LLM
-google-genai
+google-genai==1.62.0
 
 # Utilities
-python-dotenv
-pydantic
-tqdm
-EOF
+python-dotenv==1.2.1
+pydantic==2.12.5
