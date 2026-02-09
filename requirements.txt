@@ -1,0 +1,26 @@
+cat > requirements.txt << 'EOF'
+# UI
+streamlit
+
+# Document Processing
+langchain-community
+langchain-core
+langchain-text-splitters
+pdfplumber
+
+# Vector Store
+faiss-cpu
+numpy
+
+# Embeddings
+sentence-transformers
+torch
+
+# LLM
+google-genai
+
+# Utilities
+python-dotenv
+pydantic
+tqdm
+EOF

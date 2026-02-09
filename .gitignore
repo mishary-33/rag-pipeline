@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Environment variables (IMPORTANT - contains API key!)
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# HuggingFace cache (too large - 1GB+)
+.cache/
+*.bin
+
+# Vector store (large, will rebuild on server)
+vector_store/
+
+# Uploads
+temp_uploads/
+
+# Docker (we're skipping Docker for now)
+Dockerfile
+Dockerfile.dev
+docker-compose.yml
+.dockerignore
+
+# Logs
+*.log
