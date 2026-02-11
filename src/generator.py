@@ -107,9 +107,9 @@ Answer:"""
     def generate_stream(self, query: str, context_chunks: List[Dict], chat_history: List[Dict] = None) -> Gen[str, None, None]:
         """Generate streaming response"""
         
-        if not self.check_relevance(context_chunks, threshold=0.6):
-            return "⚠️ I cannot find relevant information about this question in the provided documents. The available documents may not cover this topic."
-
+        if not self.check_relevance(context_chunks, threshold=0.39):
+            yield "⚠️ I cannot find relevant information..."
+            return
 
         prompt = self.create_prompt(query, context_chunks, chat_history)
         

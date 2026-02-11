@@ -16,7 +16,7 @@ from pathlib import Path
 class VectorStore:
     """FAISS-based vector store for document embeddings"""
     
-    def __init__(self, dimension: int = 3072):
+    def __init__(self, dimension: int = 1024):
         """Initialize vector store"""
         self.dimension = dimension
         self.index = faiss.IndexFlatL2(dimension)

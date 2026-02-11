@@ -8,7 +8,6 @@ warnings.filterwarnings('ignore')
 
 import streamlit as st
 from pathlib import Path
-import time
 
 from src.document_processor import DocumentProcessor
 from src.embeddings_hf import EmbeddingGenerator

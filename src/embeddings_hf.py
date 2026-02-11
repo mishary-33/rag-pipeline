@@ -14,7 +14,9 @@ class EmbeddingGenerator:
     """Generate embeddings using HuggingFace models"""
     
     def __init__(self, model_name: str = "intfloat/multilingual-e5-large"):
-        """Initialize embedding generator"""
+        """Initialize embedding generator
+        used models but did not work: all-MiniLM-L6-v2, multilingual-e5-small, gemini embeding model.  
+        """
         print(f"📥 Loading model: {model_name}")
         
         self.model = SentenceTransformer(model_name)
@@ -24,6 +26,7 @@ class EmbeddingGenerator:
     
     def generate_embedding(self, text: str) -> List[float]:
         """Generate embedding for a single text"""
+        text = "query: " + text
         embedding = self.model.encode(text, convert_to_numpy=True)
         return embedding.tolist()
     
@@ -45,7 +48,8 @@ class EmbeddingGenerator:
         """Generate embeddings for document chunks"""
         texts = [chunk.page_content for chunk in chunks]
         metadatas = [chunk.metadata for chunk in chunks]
-        
-        embeddings = self.generate_embeddings_batch(texts)
+
+        prefixed_texts = ["passage: " + t for t in texts]
+        embeddings = self.generate_embeddings_batch(prefixed_texts)
         
         return texts, embeddings, metadatas
